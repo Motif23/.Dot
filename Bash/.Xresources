@@ -1,3 +1,13 @@
+#
+# ___  ___      _   _  __
+# |  \/  |     | | (_)/ _|
+# | .  . | ___ | |_ _| |     
+# | |\/| |/ _ \| __| |  _|   Carl Emmanuel (MotifTechServices)
+# | |  | | (_) | |_| | |     https://github.com/Motif23/
+# \_|  |_/\___/ \__|_|_|
+#
+# My .Xresources file. Nothing really special; some light customizations and some eye candy.
+
 ! ------------------------------------------------------------------------------
 ! URxvt standard arcolinux theme - Reload with xrdb -merge ~/.Xresources
 ! or alias merge
