@@ -104,6 +104,10 @@ git_plugin = 'fugitive'
     repo = "https://github.com/dylanaraps/wal.vim"
     merged = 0
 
+[[custom_plugins]]
+    repo = 'lilydjwg/colorizer'
+    merged = 0
+
 #[[custom_plugins]]
 #   repo = "https://github.com/pR0Ps/molokai-dark"
 #   merged = 0
