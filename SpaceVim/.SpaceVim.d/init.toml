@@ -106,7 +106,8 @@ git_plugin = 'fugitive'
 
 [[custom_plugins]]
     repo = 'lilydjwg/colorizer'
-    merged = 0
+    merged = false
+# Toggle `:ColorHighlight` or `:ColorToggle` to turn on and off
 
 #[[custom_plugins]]
 #   repo = "https://github.com/pR0Ps/molokai-dark"
