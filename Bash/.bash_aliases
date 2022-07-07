@@ -111,6 +111,7 @@ alias wa='awman -k'  # Search in article content
 
 # Bat
 alias bat-theme='bat --list-themes'
+alias cat='bat --paging=never'
 
 # Cpufetch
 alias cpuf='cpufetch'
