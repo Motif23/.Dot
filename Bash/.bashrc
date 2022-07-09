@@ -184,7 +184,7 @@ ex ()
 #create a file called .bashrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+[[ -f ~/.bas_personal ]] && . ~/.bash_personal
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
