@@ -1,3 +1,4 @@
 # Ignore these files
 .gitconfig
 .bash_personal
+private.fish
