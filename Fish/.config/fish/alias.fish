@@ -84,7 +84,7 @@ alias konte='ls | wc -l'
 
 # Git
 alias clone='git clone --depth 1'
-alias stat='git status'
+alias gst='git status'
 alias push='git-v1.sh'
 alias gp='git push --set-upstream orgin'	# Merging branches to remote repo #
 alias pull='git pull origin'
