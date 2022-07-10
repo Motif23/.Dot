@@ -85,13 +85,13 @@ alias konte='ls | wc -l'
 # Git
 alias clone='git clone --depth 1'
 alias gst='git status'
-alias push='git-v1.sh'
-alias gp='git push --set-upstream orgin'	# Merging branches to remote repo #
+alias gpsh='git-v1.sh'
+alias gpsh2='git push --set-upstream orgin'	# Merging branches to remote repo #
 alias pull='git pull origin'
 alias commit='git commit '
 alias add='git add .'
 alias gcat='git cat-file commit HEAD'
-alias log='git log'
+alias glog='git log'
 alias rebase='git rebase'
 alias gbranch='git branch'
 alias gshow='git show-branch'
