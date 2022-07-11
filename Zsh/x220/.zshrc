@@ -93,8 +93,6 @@ export PATH="/home/carl/.local/share/gem/ruby/3.0.0/bin:$PATH"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
-
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # User configuration
