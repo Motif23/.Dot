@@ -45,44 +45,50 @@ urgent_on_bell = true
 ############################################################
 
 [colors]
-# https://critical.ch/xterm/
-# #dracula theme adapted by Erik Dubois
-background = rgba(40, 42, 54, 0.90)
+# Base16 IR Black
+# Author: Timothée Poisot (http://timotheepoisot.fr)
 
-# special
-foreground      = #8be9fd
-foreground_bold = #f8f8f2
-cursor          = #f8f8f2
-#background      = #282a36
+foreground      = #b5b3aa
+foreground_bold = #d9d7cc
+cursor          = #d9d7cc
+background = rgba(40, 42, 54, 0.8)
 
-# black
+# 16 color space
+
+# Black, Gray, Silver, White
 color0  = #000000
-color8  = #4d4d4d
+color8  = #6c6c66
+color7  = #b5b3aa
+color15 = #fdfbee
 
-# red
-color1  = #ff5555
-color9  = #ff6e67
+# Red
+color1  = #ff6c60
+color9  = #ff6c60
 
-# green
-color2  = #50fa7b
-color10 = #5af78e
+# Green
+color2  = #a8ff60
+color10 = #a8ff60
 
-# yellow
-color3  = #f1fa8c
-color11 = #f4f99d
+# Yellow
+color3  = #ffffb6
+color11 = #ffffb6
 
-# blue
-color4  = #bd93f9
-color12 = #caa9fa
+# Blue
+color4  = #96cbfe
+color12 = #96cbfe
 
-# magenta
-color5  = #ff79c6
-color13 = #ff92d0
+# Purple
+color5  = #ff73fd
+color13 = #ff73fd
 
-# cyan
-color6  = #8be9fd
-color14 = #9aedfe
+# Teal
+color6  = #c6c5fe
+color14 = #c6c5fe
 
-# white
-color7  = #bfbfbf
-color15 = #e6e6e6
+# Extra colors
+color16 = #e9c062
+color17 = #b18a3d
+color18 = #242422
+color19 = #484844
+color20 = #918f88
+color21 = #d9d7cc
