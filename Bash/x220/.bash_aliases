@@ -24,7 +24,7 @@ alias la='exa -a --color=always --icons --group-directories-first'  # all files 
 alias ll='exa -l --color=always --icons --group-directories-first'  # long format
 alias lt='exa -aT --color=always --icons --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
-alias lf='exa -al --color=always | grep \\.'                         # list just hidden files
+alias lf='ls -p | grep -v /'                         # list just hidden files
 alias ld='exa -Dl --color=always --icons'                            # list just directories
 alias ljd='exa -D --color=always --icons'                            # list just directories without listview
 alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
@@ -80,32 +80,37 @@ alias cpuinfo='lscpu'
 alias mount='mount |column -t'
 
 # Git
-alias status='git status'
-alias push='git push origin'
+alias clone='git clone --depth 1'
+alias gst='git status'
+alias gpsh='git-v1.sh'
+alias gpsh2='git push --set-upstream orgin'	# Merging branches to remote repo #
 alias pull='git pull origin'
-alias commit='git commit -m'
+alias commit='git commit '
 alias add='git add .'
-alias log='git log'
+alias gcat='git cat-file commit HEAD'
+alias glog='git log'
 alias rebase='git rebase'
-alias branch='git branch'
-alias showbranch='git show-branch'
-alias checkout='git checkout'
-alias remove='git rm'
-alias gitname='git config --global user.name'
-alias gitmail='git config --global user.email'
+alias gbranch='git branch'
+alias gshow='git show-branch'
+alias gcheck='git checkout'
+alias gdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
+alias gmerge='git merge'
+alias gremove='git rm'
+alias gitname='git config --global user.name 'Motif23''
+alias gitmail='git config --global user.email 'cemmanuel.tech@outlook.com''
 alias gitstore='git config --global credential.helper store'
 alias gitcache='git config --global credential.helper cache'
 alias ginit='git init'
-alias remote='git remote add origin'
+alias gremote='git remote add origin'
 
 # Patch - Suckless Diffs
-alias ptch='patch -p1 <'               # Patch Diff
-alias rptch='patch -R <'               # Remove Patch Diff
+alias ptch='patch -p1 <'      # Patch Diff
+alias rptch='patch -R <'      # Remove Patch Diff
 alias cpcon='sudo cp config.def.h config.h'
-alias mkins='sudo make && sudo make clean install'     # Install Diff 
+alias mkins='sudo make && sudo make clean install'     # Install Diff
 
 # Archwiki Search
-alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
+alias wb='archman.sh' # Opens browser
 alias wt='awman'  # Searches archwiki in terminal
 alias wa='awman -k'  # Search in article content
 
