@@ -1,0 +1,142 @@
+[global_config]
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    font = Hack Nerd Font 11
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 10000000
+    use_custom_command = True
+    custom_command = fish
+    use_system_font = False
+  [[Monokai]]
+    background_color = "#403e41"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#fcfcfa"
+    show_titlebar = False
+    palette = "#403e41:#ff6188:#a9dc76:#ffd866:#fc9867:#ab9df2:#78dce8:#fcfcfa:#727072:#ff6188:#a9dc76:#ffd866:#fc9867:#ab9df2:#78dce8:#fcfcfa"
+  [[MonokaiPro]]
+  [[Aci]]
+    background_color = "#0d1926"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#b4e1fd"
+    show_titlebar = False
+    palette = "#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6:#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6"
+  [[DimmedMonokai]]
+    background_color = "#1f1f1f"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#b9bcba"
+    show_titlebar = False
+    palette = "#3a3d43:#be3f48:#879a3b:#c5a635:#4f76a1:#855c8d:#578fa4:#b9bcba:#888987:#fb001f:#0f722f:#c47033:#186de3:#fb0067:#2e706d:#fdffb9"
+  [[Dracula]]
+    background_color = "#1e1f29"
+    background_darkness = 0.9
+    background_type = transparent
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 10000000
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    use_custom_command = True
+    custom_command = fish
+  [[FishTank]]
+    background_color = "#232537"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#ecf0fe"
+    show_titlebar = False
+    palette = "#03073c:#c6004a:#acf157:#fecd5e:#525fb8:#986f82:#968763:#ecf0fc:#6c5b30:#da4b8a:#dbffa9:#fee6a9:#b2befa:#fda5cd:#a5bd86:#f6ffec"
+  [[IR_Black]]
+    background_darkness = 0.8
+    background_type = transparent
+    font = Hack Nerd Font 11
+    foreground_color = "#f1f1f1"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 10000000
+    palette = "#4f4f4f:#fa6c60:#a8ff60:#fffeb7:#96cafe:#fa73fd:#c6c5fe:#efedef:#7b7b7b:#fcb6b0:#cfffab:#ffffcc:#b5dcff:#fb9cfe:#e0e0fe:#ffffff"
+    use_custom_command = True
+    custom_command = fish
+    use_system_font = False
+    title_use_system_font = False
+    title_font = Hack Nerd Font 9
+  [[Man Page]]
+    background_color = "#fef49c"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#000000"
+    show_titlebar = False
+    palette = "#000000:#cc0000:#00a600:#999900:#0000b2:#b200b2:#00a6b2:#cccccc:#666666:#e50000:#00d900:#e5e500:#0000ff:#e500e5:#00e5e5:#e5e5e5"
+  [[Molokai]]
+    background_color = "#121212"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#bbbbbb"
+    show_titlebar = False
+    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
+  [[Monokai dark]]
+    background_color = "#272822"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    palette = "#75715e:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5:#272822:#f92672:#a6e22e:#f4bf75:#66d9ef:#ae81ff:#2aa198:#f9f8f5"
+  [[Monokai Vivid]]
+    background_color = "#121212"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#f9f9f9"
+    show_titlebar = False
+    palette = "#121212:#fa2934:#98e123:#fff30a:#0443ff:#f800f8:#01b6ed:#ffffff:#838383:#f6669d:#b1e05f:#fff26d:#0443ff:#f200f6:#51ceff:#ffffff"
+  [[Night Owl]]
+    background_color = "#011627"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#d6deeb"
+    show_titlebar = False
+    palette = "#2e3436:#ef5350:#80cbc4:#ffeb95:#82aaff:#c792ea:#addb67:#d3d7cf:#555753:#ef5350:#80cbc4:#ffeb95:#82aaff:#c792ea:#addb67:#eeeeec"
+  [[SeaShells]]
+    background_color = "#09141b"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#deb88d"
+    show_titlebar = False
+    palette = "#17384c:#d15123:#027c9b:#fca02f:#1e4950:#68d4f1:#50a3b5:#deb88d:#434b53:#d48678:#628d98:#fdd39f:#1bbcdd:#bbe3ee:#87acb4:#fee4ce"
+  [[Solarized Dark Higher Contrast]]
+    background_color = "#001e27"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#9cc2c3"
+    show_titlebar = False
+    palette = "#002831:#d11c24:#6cbe6c:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#006488:#f5163b:#51ef84:#b27e28:#178ec8:#e24d8e:#00b39e:#fcf4dc"
+  [[Spiderman]]
+    background_color = "#1b1d1e"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#e3e3e3"
+    show_titlebar = False
+    palette = "#1b1d1e:#e60813:#e22928:#e24756:#2c3fff:#2435db:#3256ff:#fffef6:#505354:#ff0325:#ff3338:#fe3a35:#1d50ff:#747cff:#6184ff:#fffff9"
+  [[The Hulk]]
+    background_color = "#1b1d1e"
+    background_darkness = 0.71
+    background_type = transparent
+    foreground_color = "#b5b5b5"
+    show_titlebar = False
+    palette = "#1b1d1e:#269d1b:#13ce30:#63e457:#2525f5:#641f74:#378ca9:#d9d8d1:#505354:#8dff2a:#48ff77:#3afe16:#506b95:#72589d:#4085a6:#e5e6e1"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = IR_Black
+[plugins]
