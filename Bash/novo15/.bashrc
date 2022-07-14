@@ -8,32 +8,24 @@
 #
 # My bash config. Nothing really special; some light customizations and some eye candy.
 
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
+###------ Exports ------####
+export OSH=/home/carl/.oh-my-bash   # Path to your oh-my-bash installation.
+export PATH="/home/carl/.local/share/gem/ruby/3.0.0/bin:$PATH"    # Path to your colorls installation
+export PATH="/home/carl/.local/bin:$PATH"   # Path to Zathura-Pywal, Statusbar
+export PATH="$HOME/.emacs.d/bin:$PATH"    # Path to .emacs.d/bin
+export PATH="/home/carl/.config/Suckless/suckless-carl/dwm/scripts:$PATH"   # Path to dwm/scripts
+export HISTCONTROL=ignoreboth:erasedups
+export PAGER='most'
+export EDITOR='vim'   # Make vim the default editor
+export VISUAL='vim'
+export BAT_THEME="Dracula"    # Bat theme
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="mairan"
+OSH_THEME="modern"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-### EXPORT ###
-export OSH=/home/carl/.oh-my-bash   # Path to your oh-my-bash installation
-export PATH="$HOME/.emacs.d/bin:$PATH"    # Path to .emacs.d/bin
-export PATH="/home/carl/.local/share/gem/ruby/3.0.0/bin:$PATH"    # Path to your colorls installation
-export PATH="/home/carl/.local/bin:$PATH"   # Path to Zathura-Pywal, Statusbar
-# export PATH="/home/carl/.config/Suckless/suckless-carl/dwm/scripts:$PATH"   # Path to dwm scripts
-export EDITOR='vim'
-export VISUAL='vim'
-export HISTCONTROL=ignoreboth:erasedups
-export PAGER='most'
-export BROWSER='firefox'
-export BAT_THEME="1337"		# Bat theme
 
 PS1='[\u@\h \W]\$ '
 
@@ -109,7 +101,7 @@ aliases=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  progress
   bashmarks
 )
 
@@ -191,10 +183,6 @@ ex ()
 # ( ) # Hide shell job control messages.
 # Not supported in the "fish" shell.
 (cat ~/.cache/wal/sequences &)
-
-# Enable fzf key-bindings and auto-completion
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
 
 # reporting tools - install when not installed
 #neofetch
