@@ -488,7 +488,7 @@ end
 alias undopush "git push -f origin HEAD^:master"
 
 # reporting tools - install when not installed
-fm6000 -r -sh fish
+fm6000 -r -c random -sh fish
 #neofetch
 #screenfetch
 #alsi
