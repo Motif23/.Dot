@@ -109,6 +109,9 @@ alias rptch='patch -R <'               # Remove Patch Diff
 alias cpcon='sudo cp config.def.h config.h'
 alias mkins='sudo make && sudo make clean install'     # Install Diff 
 
+# Window class name using xdotool
+alias wclass='xdotool getactivewindow getwindowclassname'
+
 # Archwiki Search
 alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
 alias wt='awman'  # Searches archwiki in terminal
@@ -153,10 +156,10 @@ alias aq='asciiquarium'
 alias mx='cmatrix -rk'
 alias cf='cowfortune'
 alias fg='figlet'
-alias tc='tty-clock'
+alias tc='tty-clock -c'
 
 # Ani-cli
-alias anime='~/.config/ani-cli/ani-cli'
+alias anime='ani-cli'
 
 # Start calculator with math support
 alias bc='bc -l'
@@ -207,6 +210,7 @@ alias df='df -h'
 
 #setlocale
 alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
+alias setlocales="sudo localectl set-x11-keymap be && sudo localectl set-locale LANG=en_US.UTF-8"
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
@@ -283,6 +287,9 @@ alias kpi='killall picom'
 #hardware info --short
 alias hw="hwinfo --short"
 
+#audio check pulseaudio or pipewire
+alias audio="pactl info | grep 'Server Name'"
+
 #skip integrity check
 alias paruskip='paru -S --mflags --skipinteg'
 alias yayskip='yay -S --mflags --skipinteg'
@@ -301,7 +308,6 @@ alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --so
 alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
 alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
-
 
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
@@ -332,6 +338,7 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 
 #iso and version used to install ArcoLinux
 alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+alias isoo="cat /etc/dev-rel"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
@@ -428,7 +435,8 @@ alias ltupd="leftwm-theme update"
 alias ltupg="leftwm-theme upgrade"
 
 #arcolinux applications
-alias att="archlinux-tweak-tool"
+#att is a symbolic link now
+#alias att="archlinux-tweak-tool"
 alias adt="arcolinux-desktop-trasher"
 alias abl="arcolinux-betterlockscreen"
 alias agm="arcolinux-get-mirrors"

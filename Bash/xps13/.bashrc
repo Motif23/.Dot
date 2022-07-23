@@ -197,7 +197,7 @@ source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 
 # reporting tools - install when not installed
-#neofetch
+neofetch
 #fm6000 -r -c random
 #screenfetch
 #alsi
@@ -211,4 +211,4 @@ source /usr/share/fzf/completion.bash
 #sysinfo
 #sysinfo-retro
 #cpufetch
-colorscript random
+#colorscript random
