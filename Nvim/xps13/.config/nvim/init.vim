@@ -46,7 +46,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'	" File Explorer
 " https://github.com/preservim/nerdtree
 
-Plug 'mhinz/vim-startify'  " " Start page
+Plug 'mhinz/vim-startify'   " Start page
 " https://github.com/mhinz/vim-startify#installation-and-documentation
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Fast code completion engine
