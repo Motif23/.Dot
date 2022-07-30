@@ -9,7 +9,7 @@
 " My init.vim file. Nothing really special; some light customizations and some eye candy.
 
 "============================================================================
-" Setup Start
+" => Setup Start
 "============================================================================
 
 set nocompatible            " disable compatibility to old-time vi
@@ -38,7 +38,7 @@ set ttyfast                 " Speed up scrolling in Vim
 " set backupdir=~/.cache/vim " Directory to store backup files.
 
 "============================================================================
-" Plugins Start
+" => Plugins Start
 "============================================================================
 
 call plug#begin()
@@ -67,6 +67,15 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'dylanaraps/wal.vim'   " Pywal
 " https://github.com/dylanaraps/wal.vim
 
+Plug 'tbabej/taskwiki'	" Proper project management 
+" https://gitlab.com/tbabej/taskwiki
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }     " Preview markdown
+" https://github.com/iamcco/markdown-preview.nvim
+
+Plug 'vimwiki/vimwiki'  " Personal wiki for Vim
+" https://github.com/vimwiki/vimwiki
+
 Plug 'ryanoasis/vim-devicons'  " Devicon support for nerdtree
 " https://github.com/ryanoasis/vim-devicons
 
@@ -76,7 +85,7 @@ Plug 'ryanoasis/vim-devicons'  " Devicon support for nerdtree
 call plug#end()
 
 "============================================================================
-" Vim-Startify
+" => Vim-Startify
 "============================================================================
 
 let g:startify_custom_header =
@@ -113,7 +122,7 @@ let g:startify_lists = [
         \ ]
 
 "============================================================================
-" NerdTree
+" => NerdTree
 "============================================================================
 
 " If another buffer tries to replace NERDTree, put it in the other window
@@ -129,18 +138,17 @@ autocmd VimEnter * NERDTree | wincmd p
 "======
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-u> :NERDTreeFocus<CR>
+nnoremap <C-d> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeShowHidden=1    " Show hidden files by default
-
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="-"
+let g:NERDTreeDirArrowExpandable="►"
+let g:NERDTreeDirArrowCollapsible="▼"
 
 "============================================================================
-" Vim-Airline
+" => Vim-Airline
 "============================================================================
 
 let g:airline_powerline_fonts = 1
@@ -164,7 +172,7 @@ let g:airline_theme='simple'
 let g:airline#extensions#tabline#formatter = 'default'
 
 "============================================================================
-" Vim-Gitgutter
+" => Vim-Gitgutter
 "============================================================================
 
 nmap ]h <Plug>(GitGutterNextHunk)
@@ -177,8 +185,89 @@ nmap [h <Plug>(GitGutterPrevHunk)
 "let g:gitgutter_highlight_linenrs = 1 " To turn on line number highlighting
 
 "============================================================================
-" Wal.vim
+" => Colorschemes
 "============================================================================
 
-" Colorscheme name
 let g:colors_name = 'wal'
+
+"============================================================================
+" => VimWiki
+"============================================================================
+
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+
+let wiki_2 = {}
+let wiki_2.path = '~/vimwiki_jw/'
+let wiki_2.syntax = 'markdown'
+let wiki_2.ext = '.md'
+
+let g:vimwiki_list = [wiki_1, wiki_2]
+
+let g:vimwiki_ext2syntax = {'.wiki': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+" Makes vimwiki markdown links as [text](text.md) instead of [text](text)
+let g:vimwiki_markdown_link_ext = 1
+
+"============================================================================
+" => Taskwiki
+"============================================================================
+
+let g:taskwiki_markup_syntax = 'markdown'
+let g:markdown_folding = 1
+
+"============================================================================
+" => Markdown-Preview
+"============================================================================
+
+"let g:mkdp_refresh_slow = 0 " refreshes markdown after save/exit, set 1
+let g:mkdp_command_for_global = 1   " MarkdownPreview used for all files 
+"set updatetime=100"
+
+let g:mkdp_preview_options = {
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0,
+    \ 'toc': {}
+    \ }
+
+" CLI options to the browser, like opening in a new window "
+  function OpenMarkdownPreview (url)
+    execute "silent ! firefox --new-window " . a:url
+  endfunction
+let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+
+nmap <C-p> <Plug>MarkdownPreview
+nmap <C-s> <Plug>MarkdownPreviewStop
+nmap <C-r> <Plug>MarkdownPreviewToggle
+
+"============================================================================
+" => Key-Bindings
+"============================================================================
+
+" Change the leader key from "\" to ";"
+let mapleader=";"
+
+" Vimwiki Basic Key Bindings
+" <Leader>ww -- Open default wiki index file.
+" <Leader>wt -- Open default wiki index file in a new tab.
+" <Leader>ws -- Select and open wiki index file.
+" <Leader>wd -- Delete wiki file you are in.
+" <Leader>wr -- Rename wiki file you are in.
+" <Enter> -- Follow/Create wiki link.
+" <Shift-Enter> -- Split and follow/create wiki link.
+" <Ctrl-Enter> -- Vertical split and follow/create wiki link.
+" <Backspace> -- Go back to parent(previous) wiki link.
+" <Tab> -- Find next wiki link.
+" <Shift-Tab> -- Find previous wiki link.
+" :help vimwiki-commands -- List all commands.
+" :help vimwiki -- General vimwiki help docs.
+
+"============================================================================
+" => End of Config
+"============================================================================
