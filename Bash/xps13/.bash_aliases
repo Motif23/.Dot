@@ -103,6 +103,9 @@ alias gitcache='git config --global credential.helper cache'
 alias ginit='git init'
 alias gremote='git remote add origin'
 
+# Lazygit
+alias lg='lazygit'
+
 # Patch - Suckless Diffs
 alias ptch='patch -p1 <'               # Patch Diff
 alias rptch='patch -R <'               # Remove Patch Diff
