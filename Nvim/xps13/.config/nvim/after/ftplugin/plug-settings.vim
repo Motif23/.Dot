@@ -140,9 +140,6 @@ let g:airline#extensions#tabline#formatter = 'default'
 " => Vim-Gitgutter
 "============================================================================
 
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-
 " Turn these options on/off by default
 "let g:gitgutter_enabled = 0    " To turn off vim-gitgutter
 "let g:gitgutter_signs = 0   " To turn off signs
@@ -213,10 +210,6 @@ let g:mkdp_preview_options = {
 
 "let g:mkdp_browserfunc = 'OpenMarkdownPreview'
 
-nmap <C-p> <Plug>MarkdownPreview
-nmap <C-s> <Plug>MarkdownPreviewStop
-nmap <C-r> <Plug>MarkdownPreviewToggle
-
 "============================================================================
 " => Markdown-Preview Ends
 "============================================================================
@@ -233,5 +226,20 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "============================================================================
 " => The silver surfer - for fzf Ends
+"============================================================================
+"}}}
+
+"{{{ Vim-Floaterm
+"============================================================================
+" => Vim-Floaterm
+"============================================================================
+
+let g:floaterm_gitcommit='floaterm'
+let g:floaterm_wintype='float'
+let g:floaterm_width=0.7
+let g:floaterm_height=0.8
+
+"============================================================================
+" => Vim-Floaterm Ends
 "============================================================================
 "}}}

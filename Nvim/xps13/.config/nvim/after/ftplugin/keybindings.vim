@@ -12,9 +12,12 @@
 " => KeyBindings
 "============================================================================
 
-" Change the leader key from "\" to ";"
-let mapleader=";"
+"{{{ Leader Key
+" Change the leader key from "\" to " "
+let mapleader=" "
+"}}}
 
+"{{{ Vimwiki Keybindings
 " Vimwiki Basic Key Bindings
 " <Leader>ww -- Open default wiki index file.
 " <Leader>wt -- Open default wiki index file in a new tab.
@@ -29,6 +32,37 @@ let mapleader=";"
 " <Shift-Tab> -- Find previous wiki link.
 " :help vimwiki-commands -- List all commands.
 " :help vimwiki -- General vimwiki help docs.
+"}}}
+
+"{{{ Vim-Floaterm
+let g:floaterm_keymap_toggle='<F5>'
+let g:floaterm_keymap_next='<F6>'
+let g:floaterm_keymap_prev='<F4>'
+let g:floaterm_keymap_new='<Leader>ft'
+let g:floaterm_keymap_kill='<Leader>fk'
+"}}}
+
+"{{{ Tabs
+nnoremap <C-Left>   :tabprevious<CR>
+nnoremap <C-Right>  :tabnext<CR>
+nnoremap <C-Down>	:tabclose<CR>
+"}}}
+
+"{{{ Folds
+nnoremap <C-c>	:foldclose<CR>
+nnoremap <C-o>	:foldopen<CR>
+nnoremap <C-f>	:fold<CR>
+
+"{{{ Markdown-Preview
+nmap <C-p> <Plug>MarkdownPreview
+nmap <C-s> <Plug>MarkdownPreviewStop
+nmap <C-r> <Plug>MarkdownPreviewToggle
+"}}}
+
+"{{{ Gitgutter
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+"}}}
 
 "============================================================================
 " => Keybindings End

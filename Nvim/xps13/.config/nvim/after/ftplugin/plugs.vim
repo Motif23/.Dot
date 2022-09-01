@@ -51,6 +51,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Search-tree replacemen
 Plug 'junegunn/fzf.vim'
 " https://github.com/junegunn/fzf.vim
 
+Plug 'voldikss/vim-floaterm'   " Use (neo)vim terminal in the floating/popup window
+" https://github.com/voldikss/vim-floaterm#installation
+
 Plug 'ryanoasis/vim-devicons'  " Devicon support for nerdtree
 " https://github.com/ryanoasis/vim-devicons
 

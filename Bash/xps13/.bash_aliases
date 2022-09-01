@@ -138,6 +138,7 @@ alias pref='variety --preferences'
 alias select='variety --selector'
 alias options='variety --set-option=SET_OPTIONS'
 alias wallup='wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&'
+alias foxup='pywalfox update'   # Update browser theme
 
 # Ncmpcpp
 alias music='ncmpcpp'
@@ -208,8 +209,8 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
 #keyboard
-#alias give-me-azerty-be="sudo localectl set-x11-keymap be"
-#alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
+alias give-me-azerty-be="sudo localectl set-x11-keymap be"
+alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
 
 #setlocale
 alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
@@ -252,6 +253,8 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 #grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+#grub issue 08/2022
+alias install-grub-efi="sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi"
 
 #add new fonts
 alias update-fc='sudo fc-cache -fv'
@@ -365,7 +368,7 @@ alias vgrub="sudo $EDITOR /etc/default/grub"
 alias vconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias vmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias vmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias varcomirrorlist='sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist'
+alias varcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
 alias vsddm="sudo $EDITOR /etc/sddm.conf"
 alias vsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias vfstab="sudo $EDITOR /etc/fstab"

@@ -26,7 +26,7 @@ URxvt.iso14755_52:      false
 URxvt.meta8:            false
 URxvt.metaSendsEscape:  true
 URxvt.iconFile:  		/usr/share/icons/Sardi-Mono/scalable/apps/terminal.svg
-URxvt.urlLauncher:      qutebrowser
+URxvt.urlLauncher:      firefox
 URxvt.underlineURLs:    true
 URxvt.urlButton:        1
 
