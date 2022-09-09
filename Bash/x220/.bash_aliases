@@ -205,6 +205,7 @@ alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
 
 #setlocale
 alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
+alias setlocales="sudo localectl set-x11-keymap be && sudo localectl set-locale LANG=en_US.UTF-8"
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
@@ -281,6 +282,9 @@ alias kpi='killall picom'
 #hardware info --short
 alias hw="hwinfo --short"
 
+#audio check pulseaudio or pipewire
+alias audio="pactl info | grep 'Server Name'"
+
 #skip integrity check
 alias paruskip='paru -S --mflags --skipinteg'
 alias yayskip='yay -S --mflags --skipinteg'
@@ -299,7 +303,6 @@ alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --so
 alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
 alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
-
 
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
@@ -330,6 +333,7 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 
 #iso and version used to install ArcoLinux
 alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+alias isoo="cat /etc/dev-rel"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
@@ -353,7 +357,7 @@ alias vgrub="sudo $EDITOR /etc/default/grub"
 alias vconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias vmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias vmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias varcomirrorlist='sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist'
+alias varcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
 alias vsddm="sudo $EDITOR /etc/sddm.conf"
 alias vsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias vfstab="sudo $EDITOR /etc/fstab"
@@ -426,7 +430,8 @@ alias ltupd="leftwm-theme update"
 alias ltupg="leftwm-theme upgrade"
 
 #arcolinux applications
-alias att="archlinux-tweak-tool"
+#att is a symbolic link now
+#alias att="archlinux-tweak-tool"
 alias adt="arcolinux-desktop-trasher"
 alias abl="arcolinux-betterlockscreen"
 alias agm="arcolinux-get-mirrors"
