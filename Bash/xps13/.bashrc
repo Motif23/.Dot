@@ -27,7 +27,6 @@ export OSH=/home/carl/.oh-my-bash   # Path to your oh-my-bash installation
 export PATH="$HOME/.emacs.d/bin:$PATH"    # Path to .emacs.d/bin
 export PATH="/home/carl/.local/share/gem/ruby/3.0.0/bin:$PATH"    # Path to your colorls installation
 export PATH="/home/carl/.local/bin:$PATH"   # Path to Zathura-Pywal, Statusbar
-# export PATH="/home/carl/.config/Suckless/suckless-carl/dwm/scripts:$PATH"   # Path to dwm scripts
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 export HISTCONTROL=ignoreboth:erasedups

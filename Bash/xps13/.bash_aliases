@@ -8,26 +8,24 @@
 #
 # My .bash_aliases file. Nothing really special; some light customizations and some eye candy.
 
-#ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
 
-#list
-#alias ls='ls --color=auto'
-#alias la='ls -a'
-#alias ll='ls -alFh'
-#alias l='ls'
-#alias l.="ls -A | egrep '^\.'"
 
-# Changing "ls" to "exa"
-alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --icons --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --icons --group-directories-first'  # long format
-alias lt='exa -aT --color=always --icons --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
-alias lf='exa -al --color=always | grep \\.'                         # list just hidden files
-alias ld='exa -Dl --color=always --icons'                            # list just directories
-alias ljd='exa -D --color=always --icons'                            # list just directories without listview
-alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
+# Archwiki Search
+alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
+alias wt='awman'  # Searches archwiki in terminal
+alias wa='awman -k'  # Search in article content
+
+# CD commands
+alias cd..='cd ..;pwd'          # Get rid of command not found
+alias ..='cd ..;pwd'
+alias ...='cd ../../;pwd'
+alias .3='cd ../../../;pwd'
+alias .4='cd ../../../../;pwd'
+alias .5='cd ../../../../../;pwd'
+alias .6='cd ../../../../../../;pwd'
+
+# Colorize diff output
+alias diff='colordiff'
 
 # Colorls to replase ls commands
 #alias ls='colorls'                   # replaces ls command
@@ -39,45 +37,29 @@ alias le='exa --recurse'                                             #  list dir
 #alias ll='colorls -o'                # long-list without group
 #alias lla='colorls -ao'              # long-list everything without group
 
-# cd commands
-alias cd..='cd ..;pwd'          # Get rid of command not found
-alias ..='cd ..;pwd'
-alias ...='cd ../../;pwd'
-alias .3='cd ../../../;pwd'
-alias .4='cd ../../../../;pwd'
-alias .5='cd ../../../../../;pwd'
-alias .6='cd ../../../../../../;pwd'
+# count number of files in directory
+alias count='ls | wc -l'
 
-# Display the directory structure better.
+# Tree commands
 alias trees='tree --dirsfirst -aF'     # All files printed
 alias tree='tree --dirsfirst -aF'
 
-# Colorize diff output
-alias diff='colordiff'
+# Exa commands
+alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --icons --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --icons --group-directories-first'  # long format
+alias lt='exa -aT --color=always --icons --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
+alias lf='exa -al --color=always | grep \\.'                         # list just hidden files
+alias ld='exa -Dl --color=always --icons'                            # list just directories
+alias ljd='exa -D --color=always --icons'                            # list just directories without listview
+alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
 
-# confirm before overwriting something
+# File management
 alias cp="cp -riv"
 alias mv='mv -iv'
 alias rm='rm -i'
 alias mkdir='mkdir -pv'
-
-# Parenting changing permssions on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
-
-# count number of files in directory
-alias count='ls | wc -l'
-
-# Control output of networking tool called ping
-alias ping='ping -c 5'                 # Stop after sending count ECHO_REQUEST packets
-alias fastping='ping -c 100 -s2'      # Do not wait interval 1 second, go fast
-
-# Get server cpu info
-alias cpuinfo='lscpu'
-
-# Make mount readable format
-alias mount='mount |column -t'
 
 # Git
 alias clone='git clone --depth 1'
@@ -103,8 +85,38 @@ alias gitcache='git config --global credential.helper cache'
 alias ginit='git init'
 alias gremote='git remote add origin'
 
+# Ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
+
 # Lazygit
 alias lg='lazygit'
+
+# Ls commands
+#alias ls='ls --color=auto'
+#alias la='ls -a'
+#alias ll='ls -alFh'
+#alias l='ls'
+#alias l.="ls -A | egrep '^\.'"
+
+# Make mount readable format
+alias mount='mount |column -t'
+
+# Neomutt
+alias email="neomutt"
+
+# Neovim
+alias vim='nvim'
+
+# Network commands
+alias ping='ping -c 5'               # Stop after sending count ECHO_REQUEST packets
+alias fastping='ping -c 100 -s2'     # Do not wait interval 1 second, go fast
+alias cpuinfo='lscpu'                 # Server cpu info
+
+
+# Parenting changing permssions on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
 
 # Patch - Suckless Diffs
 alias ptch='patch -p1 <'               # Patch Diff
@@ -115,10 +127,18 @@ alias mkins='sudo make && sudo make clean install'     # Install Diff
 # Window class name using xdotool
 alias wclass='xdotool getactivewindow getwindowclassname'
 
-# Archwiki Search
-alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
-alias wt='awman'  # Searches archwiki in terminal
-alias wa='awman -k'  # Search in article content
+
+
+
+
+
+
+# Fzf
+alias se='fzf'
+
+# Weather
+alias weather='curl wttr.in'
+alias wthr='weather.sh'
 
 # Bat
 alias bat-theme='bat --list-themes'
@@ -141,7 +161,7 @@ alias wallup='wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&'
 alias foxup='pywalfox update'   # Update browser theme
 
 # Ncmpcpp
-alias music='ncmpcpp'
+alias music='ncmpcpp -S visualizer'
 
 # Feh
 alias wall='feh --bg-fill --randomize ~/Pictures/Wallpapers'

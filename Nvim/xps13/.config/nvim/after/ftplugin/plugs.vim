@@ -29,7 +29,7 @@ Plug 'vim-airline/vim-airline' " Status bar
 Plug 'vim-airline/vim-airline-themes' " Status bar themes
 " https://github.com/vim-airline/vim-airline
 
-Plug 'airblade/vim-gitgutter' " Shows a git diff in the sign column
+"Plug 'airblade/vim-gitgutter' " Shows a git diff in the sign column
 " https://github.com/airblade/vim-gitgutter
 
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
