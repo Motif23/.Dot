@@ -112,6 +112,9 @@ alias email="neomutt"
 # Neovim
 alias vim='nvim'
 
+# Ranger
+alias rr='ranger'
+
 # Network commands
 alias ping='ping -c 5'               # Stop after sending count ECHO_REQUEST packets
 alias fastping='ping -c 100 -s2'     # Do not wait interval 1 second, go fast
