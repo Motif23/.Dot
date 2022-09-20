@@ -33,6 +33,9 @@ export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 export BROWSER='firefox'
 export BAT_THEME="1337"		# Bat theme
+export FZF_DEFAULT_OPTS='--height 40% --select-1 --exit-0'
+export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
+export NEWS_API_KEY='3f6a492a0d394db0a837d92ab5b4254f'
 
 PS1='[\u@\h \W]\$ '
 

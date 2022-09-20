@@ -15,7 +15,7 @@ alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens brows
 alias wt='awman'  # Searches archwiki in terminal
 alias wa='awman -k'  # Search in article content
 
-# CD commands
+# Cd commands
 alias cd..='cd ..;pwd'          # Get rid of command not found
 alias ..='cd ..;pwd'
 alias ...='cd ../../;pwd'
@@ -23,6 +23,9 @@ alias .3='cd ../../../;pwd'
 alias .4='cd ../../../../;pwd'
 alias .5='cd ../../../../../;pwd'
 alias .6='cd ../../../../../../;pwd'
+
+# Cheat.sh
+alias whats='cheat.sh'
 
 # Colorize diff output
 alias diff='colordiff'
@@ -37,12 +40,11 @@ alias diff='colordiff'
 #alias ll='colorls -o'                # long-list without group
 #alias lla='colorls -ao'              # long-list everything without group
 
-# count number of files in directory
+# Count number of files in directory
 alias count='ls | wc -l'
 
-# Tree commands
-alias trees='tree --dirsfirst -aF'     # All files printed
-alias tree='tree --dirsfirst -aF'
+# Dictionary online
+alias define='dictionary.sh'
 
 # Exa commands
 alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
@@ -54,6 +56,9 @@ alias lf='exa -al --color=always | grep \\.'                         # list just
 alias ld='exa -Dl --color=always --icons'                            # list just directories
 alias ljd='exa -D --color=always --icons'                            # list just directories without listview
 alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
+
+# Extract archive based on extensions name
+alias extract='extract.sh'
 
 # File management
 alias cp="cp -riv"
@@ -117,6 +122,7 @@ alias cpuinfo='lscpu'                 # Server cpu info
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+alias mkex='sudo chmod +x'
 
 # Patch - Suckless Diffs
 alias ptch='patch -p1 <'               # Patch Diff
@@ -127,14 +133,12 @@ alias mkins='sudo make && sudo make clean install'     # Install Diff
 # Window class name using xdotool
 alias wclass='xdotool getactivewindow getwindowclassname'
 
-
-
-
-
-
+# Tree commands
+alias trees='tree --dirsfirst -aF'     # All files printed
+alias tree='tree --dirsfirst -aF'
 
 # Fzf
-alias se='fzf'
+sc() { cd ~/.local/bin; $EDITOR $(fzf) ;}
 
 # Weather
 alias weather='curl wttr.in'
@@ -159,6 +163,7 @@ alias select='variety --selector'
 alias options='variety --set-option=SET_OPTIONS'
 alias wallup='wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&'
 alias foxup='pywalfox update'   # Update browser theme
+alias getwall='autodl-wallhaven.sh'
 
 # Ncmpcpp
 alias music='ncmpcpp -S visualizer'
