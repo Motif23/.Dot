@@ -9,6 +9,9 @@
 # My alias.fish file. Nothing really special; some light customizations and some eye candy.
 
 
+# My Update Script
+alias upd='update.sh'
+
 # Emacs
 alias emacs='emacsclient -c -a 'emacs' &'
 
@@ -45,7 +48,7 @@ alias clock='tty-clock -cB'
 alias clk='clock-terminator.sh && sleep 1.5 && exit 1'
 
 # Ani-cli
-alias anime='~/.config/ani-cli/ani-cli'
+alias anime='ani-cli'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
@@ -88,7 +91,7 @@ alias gst='git status'
 alias gpsh='git-v1.sh'
 alias gpsh2='git push --set-upstream orgin'	# Merging branches to remote repo #
 alias pull='git pull origin'
-alias commit='git commit '
+alias gcommit='git commit '
 alias add='git add .'
 alias gcat='git cat-file commit HEAD'
 alias glog='git log'

@@ -8,26 +8,27 @@
 #
 # My .bash_aliases file. Nothing really special; some light customizations and some eye candy.
 
-#ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
 
-#list
-#alias ls='ls --color=auto'
-#alias la='ls -a'
-#alias ll='ls -alFh'
-#alias l='ls'
-#alias l.="ls -A | egrep '^\.'"
 
-# Changing "ls" to "exa"
-alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --icons --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --icons --group-directories-first'  # long format
-alias lt='exa -aT --color=always --icons --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
-alias lf='exa -al --color=always | grep \\.'                         # list just hidden files
-alias ld='exa -Dl --color=always --icons'                            # list just directories
-alias ljd='exa -D --color=always --icons'                            # list just directories without listview
-alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
+# Archwiki Search
+alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
+alias wt='awman'  # Searches archwiki in terminal
+alias wa='awman -k'  # Search in article content
+
+# Cd commands
+alias cd..='cd ..;pwd'          # Get rid of command not found
+alias ..='cd ..;pwd'
+alias ...='cd ../../;pwd'
+alias .3='cd ../../../;pwd'
+alias .4='cd ../../../../;pwd'
+alias .5='cd ../../../../../;pwd'
+alias .6='cd ../../../../../../;pwd'
+
+# Cheat.sh
+alias whats='cheat.sh'
+
+# Colorize diff output
+alias diff='colordiff'
 
 # Colorls to replase ls commands
 #alias ls='colorls'                   # replaces ls command
@@ -39,64 +40,92 @@ alias le='exa --recurse'                                             #  list dir
 #alias ll='colorls -o'                # long-list without group
 #alias lla='colorls -ao'              # long-list everything without group
 
-# cd commands
-alias cd..='cd ..;pwd'          # Get rid of command not found
-alias ..='cd ..;pwd'
-alias ...='cd ../../;pwd'
-alias .3='cd ../../../;pwd'
-alias .4='cd ../../../../;pwd'
-alias .5='cd ../../../../../;pwd'
-alias .6='cd ../../../../../../;pwd'
+# Count number of files in directory
+alias count='ls | wc -l'
 
-# Display the directory structure better.
-alias trees='tree --dirsfirst -aF'     # All files printed
-alias tree='tree --dirsfirst -aF'
+# Dictionary online
+alias define='dictionary.sh'
 
-# Colorize diff output
-alias diff='colordiff'
+# Exa commands
+alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --icons --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --icons --group-directories-first'  # long format
+alias lt='exa -aT --color=always --icons --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
+alias lf='exa -al --color=always | grep \\.'                         # list just hidden files
+alias ld='exa -Dl --color=always --icons'                            # list just directories
+alias ljd='exa -D --color=always --icons'                            # list just directories without listview
+alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
 
-# confirm before overwriting something
+# Extract archive based on extensions name
+alias extract='extract.sh'
+
+# File management
 alias cp="cp -riv"
 alias mv='mv -iv'
 alias rm='rm -i'
 alias mkdir='mkdir -pv'
 
-# Parenting changing permssions on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+# Git
+alias clone='git clone --depth 1'
+alias gst='git status'
+alias gpsh='git-v1.sh'
+alias gpsh2='git push --set-upstream orgin'	# Merging branches to remote repo #
+alias pull='git pull origin'
+alias commit='git commit '
+alias add='git add .'
+alias gcat='git cat-file commit HEAD'
+alias glog='git log'
+alias rebase='git rebase'
+alias gbranch='git branch'
+alias gshow='git show-branch'
+alias gcheck='git checkout'
+alias gdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
+alias gmerge='git merge'
+alias gremove='git rm'
+alias gitname='git config --global user.name 'Motif23''
+alias gitmail='git config --global user.email 'cemmanuel.tech@outlook.com''
+alias gitstore='git config --global credential.helper store'
+alias gitcache='git config --global credential.helper cache'
+alias ginit='git init'
+alias gremote='git remote add origin'
 
-# count number of files in directory
-alias count='ls | wc -l'
+# Ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
 
-# Control output of networking tool called ping
-alias ping='ping -c 5'                 # Stop after sending count ECHO_REQUEST packets
-alias fastping='ping -c 100 -s2'      # Do not wait interval 1 second, go fast
+# Lazygit
+alias lg='lazygit'
 
-# Get server cpu info
-alias cpuinfo='lscpu'
+# Ls commands
+#alias ls='ls --color=auto'
+#alias la='ls -a'
+#alias ll='ls -alFh'
+#alias l='ls'
+#alias l.="ls -A | egrep '^\.'"
 
 # Make mount readable format
 alias mount='mount |column -t'
 
-# Git
-alias status='git status'
-alias push='git push origin'
-alias pull='git pull origin'
-alias commit='git commit -m'
-alias add='git add .'
-alias log='git log'
-alias rebase='git rebase'
-alias branch='git branch'
-alias showbranch='git show-branch'
-alias checkout='git checkout'
-alias remove='git rm'
-alias gitname='git config --global user.name'
-alias gitmail='git config --global user.email'
-alias gitstore='git config --global credential.helper store'
-alias gitcache='git config --global credential.helper cache'
-alias ginit='git init'
-alias remote='git remote add origin'
+# Neomutt
+alias email="neomutt"
+
+# Neovim
+alias vim='nvim'
+
+# Ranger
+alias rr='ranger'
+
+# Network commands
+alias ping='ping -c 5'               # Stop after sending count ECHO_REQUEST packets
+alias fastping='ping -c 100 -s2'     # Do not wait interval 1 second, go fast
+alias cpuinfo='lscpu'                 # Server cpu info
+
+
+# Parenting changing permssions on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias mkex='sudo chmod +x'
 
 # Patch - Suckless Diffs
 alias ptch='patch -p1 <'               # Patch Diff
@@ -104,10 +133,19 @@ alias rptch='patch -R <'               # Remove Patch Diff
 alias cpcon='sudo cp config.def.h config.h'
 alias mkins='sudo make && sudo make clean install'     # Install Diff 
 
-# Archwiki Search
-alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
-alias wt='awman'  # Searches archwiki in terminal
-alias wa='awman -k'  # Search in article content
+# Window class name using xdotool
+alias wclass='xdotool getactivewindow getwindowclassname'
+
+# Tree commands
+alias trees='tree --dirsfirst -aF'     # All files printed
+alias tree='tree --dirsfirst -aF'
+
+# Fzf
+sc() { cd ~/.local/bin; $EDITOR $(fzf) ;}
+
+# Weather
+alias weather='curl wttr.in'
+alias wthr='weather.sh'
 
 # Bat
 alias bat-theme='bat --list-themes'
@@ -127,9 +165,11 @@ alias pref='variety --preferences'
 alias select='variety --selector'
 alias options='variety --set-option=SET_OPTIONS'
 alias wallup='wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&'
+alias foxup='pywalfox update'   # Update browser theme
+alias getwall='autodl-wallhaven.sh'
 
 # Ncmpcpp
-alias music='ncmpcpp'
+alias music='ncmpcpp -S visualizer'
 
 # Feh
 alias wall='feh --bg-fill --randomize ~/Pictures/Wallpapers'
@@ -148,10 +188,10 @@ alias aq='asciiquarium'
 alias mx='cmatrix -rk'
 alias cf='cowfortune'
 alias fg='figlet'
-alias tc='tty-clock'
+alias tc='tty-clock -c'
 
 # Ani-cli
-alias anime='~/.config/ani-cli/ani-cli'
+alias anime='ani-cli'
 
 # Start calculator with math support
 alias bc='bc -l'
@@ -197,11 +237,12 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
 #keyboard
-#alias give-me-azerty-be="sudo localectl set-x11-keymap be"
-#alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
+alias give-me-azerty-be="sudo localectl set-x11-keymap be"
+alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
 
 #setlocale
 alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
+alias setlocales="sudo localectl set-x11-keymap be && sudo localectl set-locale LANG=en_US.UTF-8"
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
@@ -240,6 +281,8 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 #grub update
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+#grub issue 08/2022
+alias install-grub-efi="sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi"
 
 #add new fonts
 alias update-fc='sudo fc-cache -fv'
@@ -278,6 +321,9 @@ alias kpi='killall picom'
 #hardware info --short
 alias hw="hwinfo --short"
 
+#audio check pulseaudio or pipewire
+alias audio="pactl info | grep 'Server Name'"
+
 #skip integrity check
 alias paruskip='paru -S --mflags --skipinteg'
 alias yayskip='yay -S --mflags --skipinteg'
@@ -296,7 +342,6 @@ alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --so
 alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
 alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
-
 
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
@@ -327,6 +372,7 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 
 #iso and version used to install ArcoLinux
 alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+alias isoo="cat /etc/dev-rel"
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
@@ -350,7 +396,7 @@ alias vgrub="sudo $EDITOR /etc/default/grub"
 alias vconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias vmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias vmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias varcomirrorlist='sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist'
+alias varcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
 alias vsddm="sudo $EDITOR /etc/sddm.conf"
 alias vsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias vfstab="sudo $EDITOR /etc/fstab"
@@ -423,7 +469,8 @@ alias ltupd="leftwm-theme update"
 alias ltupg="leftwm-theme upgrade"
 
 #arcolinux applications
-alias att="archlinux-tweak-tool"
+#att is a symbolic link now
+#alias att="archlinux-tweak-tool"
 alias adt="arcolinux-desktop-trasher"
 alias abl="arcolinux-betterlockscreen"
 alias agm="arcolinux-get-mirrors"

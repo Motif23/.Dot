@@ -121,4 +121,6 @@
     text-color: @foreground;
 }
 //@theme "/usr/share/rofi/themes/Arc-Dark-Botticelli.rasi"
-@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+//@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+/* Dark theme. */
+@import "~/.cache/wal/colors-rofi-dark"
