@@ -197,6 +197,10 @@ function cd
     builtin cd $argv
 end
 
+function se
+    fzf --reverse --margin 2,10,1,1% --color='gutter:7' --height 40% --preview 'bat --style=full --color=always {}' --bind 'ctrl-/:change-preview-window(hidden|)' --bind "enter:execute(vim {})"
+end
+
 ### ALIASES ###
 
 #list

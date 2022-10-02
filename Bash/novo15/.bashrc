@@ -15,9 +15,12 @@ export PATH="/home/carl/.local/bin:$PATH"   # Path to Zathura-Pywal, Statusbar
 export PATH="$HOME/.emacs.d/bin:$PATH"    # Path to .emacs.d/bin
 export PATH="/home/carl/.config/Suckless/suckless-carl/dwm/scripts:$PATH"   # Path to dwm/scripts
 export HISTCONTROL=ignoreboth:erasedups
-export PAGER='most'
-export EDITOR='vim'   # Make vim the default editor
-export VISUAL='vim'
+export PAGER="less -R"
+export EDITOR="vim"   # Make vim the default editor
+export VISUAL="vim"
+export TERMINAL="st"
+export BROWSER="firefox"
+export FZF_DEFAULT_OPTS="--height 40% --reverse"
 export BAT_THEME="Dracula"    # Bat theme
 
 # Set name of the theme to load. Optionally, if you set this to "random"

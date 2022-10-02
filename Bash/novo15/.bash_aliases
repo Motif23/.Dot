@@ -204,8 +204,8 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
 #keyboard
-#alias give-me-azerty-be="sudo localectl set-x11-keymap be"
-#alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
+alias give-me-azerty-be="sudo localectl set-x11-keymap be"
+alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
 
 #setlocale
 alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
@@ -439,7 +439,7 @@ alias ltupg="leftwm-theme upgrade"
 #att is a symbolic link now
 #alias att="archlinux-tweak-tool"
 alias adt="arcolinux-desktop-trasher"
-alias abl="archlinux-betterlockscreen"
+alias abl="arcolinux-betterlockscreen"
 alias agm="arcolinux-get-mirrors"
 alias amr="arcolinux-mirrorlist-rank-info"
 alias aom="arcolinux-osbeck-as-mirror"
@@ -462,4 +462,3 @@ alias personal6='cp -Rf /personal/6/* ~'
 alias personal7='cp -Rf /personal/7/* ~'
 alias personal8='cp -Rf /personal/8/* ~'
 alias personal9='cp -Rf /personal/9/* ~'
-

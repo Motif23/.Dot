@@ -68,9 +68,9 @@ git_plugin = 'fugitive'
 #=============================================================================
 
 # Custom Plugins
-[[custom_plugins]]
-    repo = "https://github.com/liuchengxu/space-vim-theme"
-    merged = 0
+#[[custom_plugins]]
+#    repo = "https://github.com/liuchengxu/space-vim-theme"
+#    merged = 0
 
 [[cusotm_plugins]]
     repo = "https://github.com/vim-airline/vim-airline"

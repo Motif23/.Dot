@@ -12,6 +12,9 @@
 # Emacs
 alias emacs='emacsclient -c -a 'emacs' &'
 
+# Fzf
+
+
 # Variety/Pywal
 alias quit='variety -quit'
 alias show='variety --show-current'
@@ -113,7 +116,7 @@ alias cpcon='sudo cp config.def.h config.h'
 alias mkins='sudo make && sudo make clean install'     # Install Diff
 
 # Archwiki Search
-alias wb='archman.sh' # Opens browser
+alias wb='/home/car/.local/bin/archman.sh' # Opens browser
 alias wt='awman'  # Searches archwiki in terminal
 alias wa='awman -k'  # Search in article content
 
