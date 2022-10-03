@@ -151,13 +151,15 @@ alias tree='tree --dirsfirst -aF'
 #sc() { cd ~/.local/bin; $EDITOR $(fzf) ;}
 sc() { du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf --reverse --preview 'bat --style=full --color=always {}' --bind 'ctrl-h:change-preview-window(hidden|)' | xargs -r $EDITOR ;}
 sf() { fzf --preview 'bat --style=full --color=always {}' --bind 'ctrl-h:change-preview-window(hidden|)' | xargs -r -I % $EDITOR % ;}
-sm() { du -a /mnt/ArcoXPS-Data/Movies/* | awk '{print $2}' | fzf --reverse --margin 1 | --bind "enter:execute(mpv {})" ;}
+#sm() { du -a /mnt/ArcoXPS-Data/Movies/* | awk '{print $3}' | fzf --reverse --margin 1 --bind "enter:execute(mpv {})" ;}
+sm() { du -a /mnt/ArcoXPS-Data/Movies/* | awk '{print $2}' | fzf --reverse --margin 1 | mpv --playlist=- ;}
 
 # Weather
 alias weather='curl wttr.in'
 alias wthr='weather.sh'
 
 # Bat
+# https://github.com/sharkdp/bat
 alias bat-theme='bat --list-themes'
 alias batcopy='~/.local/bin/batcopy.sh'	# Copy bat output without line numbers
 
