@@ -26,16 +26,30 @@ OSH_THEME="mairan"
 export OSH=/home/carl/.oh-my-bash   # Path to your oh-my-bash installation
 export PATH="$HOME/.emacs.d/bin:$PATH"    # Path to .emacs.d/bin
 export PATH="/home/carl/.local/share/gem/ruby/3.0.0/bin:$PATH"    # Path to your colorls installation
-export PATH="/home/carl/.local/bin:$PATH"   # Path to Zathura-Pywal, Statusbar
-export EDITOR='/usr/bin/nvim'
-export VISUAL='/usr/bin/nvim'
+export PATH="/home/carl/.local/bin:$PATH" 
+export TERMINAL="st"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export READER="zathura"
+export FILE="ranger"
 export HISTCONTROL=ignoreboth:erasedups
-export PAGER='most'
+#export PAGER='most'
+export BAT_PAGER="less -RF"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export LESS='-R --use-color -Dd+r$Du+b'
 export BROWSER='firefox'
 export BAT_THEME="1337"		# Bat theme
-export FZF_DEFAULT_OPTS='--height 40% --select-1 --exit-0'
-export FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name '\''*.tags'\'' -printf '\''%P\n'\'
+export FZF_DEFAULT_OPTS='--height 40% --margin 1,5,1,1% --select-1 --exit-0'
 export NEWS_API_KEY='3f6a492a0d394db0a837d92ab5b4254f'
+
+# Color for manpages in less makes manpages a little easier to read
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 
 PS1='[\u@\h \W]\$ '
 

@@ -11,7 +11,7 @@
 
 # Change directories and view directories inside
 
-function cld() {
+function lsd() {
     DIR="$*";
         # if no DIR given, go home
         if [ $# -lt 1 ]; then
@@ -37,7 +37,7 @@ function cld() {
 
 # Change directories and view all contents
 
-function cla() {
+function lsa() {
     DIR="$*";
         # if no DIR given, go home
         if [ $# -lt 1 ]; then
@@ -50,7 +50,7 @@ function cla() {
 
 # Change directories and view all files, hidden included
 
-function clh() {
+function lsh() {
     DIR="$*";
         # if no DIR given, go home
         if [ $# -lt 1 ]; then
@@ -83,20 +83,17 @@ prompt_command() {
 }
 
 
+# Use bat to colorize help text
+# https://github.com/sharkdp/bat
 
-ff() {
-
-# Modified version where you can press
-#   - CTRL-O to open with `open` command,
-#   - CTRL-E or Enter key to open with the $EDITOR
-
-    {
-      IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
-      key=$(head -1 <<< "$out")
-      file=$(head -2 <<< "$out" | tail -1)
-      if [ -n "$file" ]; then
-        [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-      fi
-    }
-
+alias bathelp='bat --plain --language=help'
+help() {
+    "$@" --help 2>&1 | bathelp
 }
+
+
+# Remove the ^C when hitting Ctrl-C in terminal
+stty -echoctl
+
+# Restore the controls, use same name without dash
+#stty echoctl

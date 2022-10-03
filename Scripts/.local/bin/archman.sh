@@ -10,7 +10,7 @@
 browser="qutebrowser"
 
 echo "Which application?"
-read -r application
+read -r "application"
 
 nc -z 8.8.8.8 53  >/dev/null 2>&1
 online=$?

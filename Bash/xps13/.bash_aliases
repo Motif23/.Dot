@@ -9,9 +9,11 @@
 # My .bash_aliases file. Nothing really special; some light customizations and some eye candy.
 
 
+# Source bash
+alias src='clear; source ~/.bashrc'
 
 # Archwiki Search
-alias wb='~/.config/Suckless/suckless-carl/dwm/scripts/archman.sh' # Opens browser
+alias wb='~/.local/bin/archman.sh' # Opens browser
 alias wt='awman'  # Searches archwiki in terminal
 alias wa='awman -k'  # Search in article content
 
@@ -26,9 +28,6 @@ alias .6='cd ../../../../../../;pwd'
 
 # Cheat.sh
 alias whats='cheat.sh'
-
-# Colorize diff output
-alias diff='colordiff'
 
 # Colorls to replase ls commands
 #alias ls='colorls'                   # replaces ls command
@@ -78,7 +77,7 @@ alias gcat='git cat-file commit HEAD'
 alias glog='git log'
 alias rebase='git rebase'
 alias gbranch='git branch'
-alias gshow='git show-branch'
+alias gshow='git show $(git branch --show-current) | bat -l rs'
 alias gcheck='git checkout'
 alias gdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
 alias gmerge='git merge'
@@ -104,22 +103,29 @@ alias lg='lazygit'
 #alias l.="ls -A | egrep '^\.'"
 
 # Make mount readable format
-alias mount='mount |column -t'
+alias mount='mount | column -t'
 
 # Neomutt
 alias email="neomutt"
 
 # Neovim
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # Ranger
 alias rr='ranger'
 
+# Xscreensaver
+alias exitsaver='xscreensaver-command -exit'
+
 # Network commands
-alias ping='ping -c 5'               # Stop after sending count ECHO_REQUEST packets
-alias fastping='ping -c 100 -s2'     # Do not wait interval 1 second, go fast
+# Prettyping - https://denilson.sa.nom.br/prettyping/
+alias ping='prettyping -c 5'               # Stop after sending count ECHO_REQUEST packets
+alias fastping='prettyping -c 100 -s2'     # Do not wait interval 1 second, go fast
 alias cpuinfo='lscpu'                 # Server cpu info
 
+# Ip Address
+alias ip='ip -color=auto address'
 
 # Parenting changing permssions on / #
 alias chown='chown --preserve-root'
@@ -128,10 +134,11 @@ alias chgrp='chgrp --preserve-root'
 alias mkex='sudo chmod +x'
 
 # Patch - Suckless Diffs
-alias ptch='patch -p1 <'               # Patch Diff
-alias rptch='patch -R <'               # Remove Patch Diff
+alias ptch='patch -p1 <'        # Patch Diff
+alias rptch='patch -R <'        # Remove Patch Diff
+alias make='colormake'			# https://github.com/pagekite/Colormake/
 alias cpcon='sudo cp config.def.h config.h'
-alias mkins='sudo make && sudo make clean install'     # Install Diff 
+alias mkins='sudo colormake && sudo colormake clean install'	# Compile 
 
 # Window class name using xdotool
 alias wclass='xdotool getactivewindow getwindowclassname'
@@ -141,7 +148,10 @@ alias trees='tree --dirsfirst -aF'     # All files printed
 alias tree='tree --dirsfirst -aF'
 
 # Fzf
-sc() { cd ~/.local/bin; $EDITOR $(fzf) ;}
+#sc() { cd ~/.local/bin; $EDITOR $(fzf) ;}
+sc() { du -a ~/.local/bin/* ~/.config/* | awk '{print $2}' | fzf --reverse --preview 'bat --style=full --color=always {}' --bind 'ctrl-h:change-preview-window(hidden|)' | xargs -r $EDITOR ;}
+sf() { fzf --preview 'bat --style=full --color=always {}' --bind 'ctrl-h:change-preview-window(hidden|)' | xargs -r -I % $EDITOR % ;}
+sm() { du -a /mnt/ArcoXPS-Data/Movies/* | awk '{print $2}' | fzf --reverse --margin 1 | --bind "enter:execute(mpv {})" ;}
 
 # Weather
 alias weather='curl wttr.in'
@@ -149,6 +159,7 @@ alias wthr='weather.sh'
 
 # Bat
 alias bat-theme='bat --list-themes'
+alias batcopy='~/.local/bin/batcopy.sh'	# Copy bat output without line numbers
 
 # Cpufetch
 alias cpuf='cpufetch'
@@ -168,14 +179,18 @@ alias wallup='wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&'
 alias foxup='pywalfox update'   # Update browser theme
 alias getwall='autodl-wallhaven.sh'
 
-# Ncmpcpp
-alias music='ncmpcpp -S visualizer'
-
 # Feh
 alias wall='feh --bg-fill --randomize ~/Pictures/Wallpapers'
 alias wall2='feh --bg-fill --randomize ~/Pictures/Wallpapers2'
 alias wall3='feh --bg-fill --randomize ~/Pictures/Wallpapers-Anime'
 alias wall4='feh --bg-fill --randomize ~/Pictures/New-Wallpapers'
+
+# Sxiv
+alias view='sxiv'
+alias viewa='sxiv -t *'
+
+# Ncmpcpp
+alias music='ncmpcpp -S visualizer'
 
 # Stow
 alias stowan='stow --adopt -nvt ~'    # Import existing -- simulation (-n)
@@ -205,15 +220,6 @@ alias card='cd /run/user/1000/gvfs/mtp:host=SAMSUNG_SAMSUNG_Android_RF8N301TCEF/
 
 # Emacs
 alias emacs='emacsclient -c -a 'emacs' &'
-
-# Color for manpages in less makes manpages a little easier to read
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Storage drive usage
 alias diskspace='du -S | sort -n -r |more'
@@ -268,8 +274,8 @@ alias merge="xrdb -merge ~/.Xresources"
 
 # Aliases for software managment
 # pacman or pm
-alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syyu'
+alias pacman='sudo pacman --color=always'
+alias update='sudo pacman --color=always -Syyu'
 
 # paru as aur helper - updates everything
 alias pksyua="paru -Syu --noconfirm"
@@ -495,4 +501,3 @@ alias personal6='cp -Rf /personal/6/* ~'
 alias personal7='cp -Rf /personal/7/* ~'
 alias personal8='cp -Rf /personal/8/* ~'
 alias personal9='cp -Rf /personal/9/* ~'
-
