@@ -87,7 +87,9 @@ alias gshow='git show $(git branch --show-current) | bat -l rs'
 alias gswitch='git switch'
 alias gdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
 alias gmerge='git merge'
-alias gremove='git rm'
+alias grem='git rm --cached'		# Removes file from index, not from working tree
+alias gremn='git rm --cached -n'		# Performs 'dry run' and shows what will be deleted
+alias gremove='git rm'		# Removes file from both index and working tree
 alias gitname='git config --global user.name 'Motif23''
 alias gitmail='git config --global user.email 'cemmanuel.tech@outlook.com''
 alias gitstore='git config --global credential.helper store'
