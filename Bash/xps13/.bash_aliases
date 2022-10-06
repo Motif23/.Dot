@@ -12,6 +12,21 @@
 # Source bash
 alias src='clear; source ~/.bashrc'
 
+## Scripts ##
+alias whats='cheat.sh'	# Cheat.sh
+alias define='dictionary.sh'	# Dictionary online
+alias extract='extract.sh'	# Extract archive based on extensions name
+alias getnews='~/.local/bin/getnews.sh'	# Get News
+alias weather='curl wttr.in'	# Weather in terminal
+alias wthr='weather.sh'			# Weather - One Line, dwmblocks
+alias radar='doppler.sh'	# Live weather radar
+alias getwall='autodl-wallhaven.sh'	# Auto download wallpapers from wallhaven.cc
+alias batcopy='~/.local/bin/batcopy.sh'	# Copy bat output without line numbers
+
+# Bat
+# https://github.com/sharkdp/bat
+alias bat-theme='bat --list-themes'
+
 # Archwiki Search
 alias wb='~/.local/bin/archman.sh' # Opens browser
 alias wt='awman'  # Searches archwiki in terminal
@@ -26,9 +41,6 @@ alias .4='cd ../../../../;pwd'
 alias .5='cd ../../../../../;pwd'
 alias .6='cd ../../../../../../;pwd'
 
-# Cheat.sh
-alias whats='cheat.sh'
-
 # Colorls to replase ls commands
 #alias ls='colorls'                   # replaces ls command
 #alias la='colorls -a'                # list hidden files and directories
@@ -42,22 +54,16 @@ alias whats='cheat.sh'
 # Count number of files in directory
 alias count='ls | wc -l'
 
-# Dictionary online
-alias define='dictionary.sh'
-
 # Exa commands
 alias ls='exa -al --color=always --icons --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --icons --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --icons --group-directories-first'  # long format
 alias lt='exa -aT --color=always --icons --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
-alias lf='exa -al --color=always | grep \\.'                         # list just hidden files
-alias ld='exa -Dl --color=always --icons'                            # list just directories
-alias ljd='exa -D --color=always --icons'                            # list just directories without listview
-alias le='exa --recurse'                                             #  list directory and the subdirectory it contains
-
-# Extract archive based on extensions name
-alias extract='extract.sh'
+alias lf='exa -al --color=always | grep \\.'                        # list just hidden files
+alias ld='exa -Dl --color=always --icons'                           # list just directories
+alias ljd='exa -D --color=always --icons'                           # list just directories without listview
+alias le='exa --recurse'                                            #  list directory and the subdirectory it contains
 
 # File management
 alias cp="cp -riv"
@@ -78,7 +84,7 @@ alias glog='git log'
 alias rebase='git rebase'
 alias gbranch='git branch'
 alias gshow='git show $(git branch --show-current) | bat -l rs'
-alias gcheck='git checkout'
+alias gswitch='git switch'
 alias gdiff='git diff --name-only --relative --diff-filter=d | xargs bat --diff'
 alias gmerge='git merge'
 alias gremove='git rm'
@@ -122,7 +128,7 @@ alias exitsaver='xscreensaver-command -exit'
 # Prettyping - https://denilson.sa.nom.br/prettyping/
 alias ping='prettyping -c 5'               # Stop after sending count ECHO_REQUEST packets
 alias fastping='prettyping -c 100 -s2'     # Do not wait interval 1 second, go fast
-alias cpuinfo='lscpu'                 # Server cpu info
+alias cpuinfo='lscpu'                 	   # Server cpu info
 
 # Ip Address
 alias ip='ip -color=auto address'
@@ -154,15 +160,6 @@ sf() { fzf --preview 'bat --style=full --color=always {}' --bind 'ctrl-h:change-
 #sm() { du -a /mnt/ArcoXPS-Data/Movies/* | awk '{print $3}' | fzf --reverse --margin 1 --bind "enter:execute(mpv {})" ;}
 sm() { du -a /mnt/ArcoXPS-Data/Movies/* | awk '{print $2}' | fzf --reverse --margin 1 | mpv --playlist=- ;}
 
-# Weather
-alias weather='curl wttr.in'
-alias wthr='weather.sh'
-
-# Bat
-# https://github.com/sharkdp/bat
-alias bat-theme='bat --list-themes'
-alias batcopy='~/.local/bin/batcopy.sh'	# Copy bat output without line numbers
-
 # Cpufetch
 alias cpuf='cpufetch'
 
@@ -179,7 +176,6 @@ alias select='variety --selector'
 alias options='variety --set-option=SET_OPTIONS'
 alias wallup='wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&'
 alias foxup='pywalfox update'   # Update browser theme
-alias getwall='autodl-wallhaven.sh'
 
 # Feh
 alias wall='feh --bg-fill --randomize ~/Pictures/Wallpapers'

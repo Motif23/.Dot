@@ -154,6 +154,9 @@ alias vz="$EDITOR ~/.zshrc"
 alias vf="$EDITOR ~/.config/fish/config.fish"
 alias vneofetch="$EDITOR ~/.config/neofetch/config.conf"
 
+alias radar='doppler.sh'	# Live weather radar
+alias weather='curl wttr.in'	# Weather in terminal
+
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
 alias personal1='cp -Rf /personal/1/* ~'

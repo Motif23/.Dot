@@ -9,13 +9,14 @@ helpmsg() {
   printf "%s\n" "usage: ${0##*/}"
   printf "\n"
   printf "%s\n" "  $ ${0##*/}"
-  printf "%s\n" "  $ ${0##*/} trump"
-  printf "%s\n" "  $ ${0##*/} world+cup"
-  printf "%s\n" "  $ ${0##*/} russian+alien+invasion"
+  printf "%s\n" "  $ ${0##*/} category=general,page=2,reverse "
+  printf "%s\n" "  $ ${0##*/} category=health,page=2,reverse "
+  printf "%s\n" "  $ ${0##*/} category=technology,page=2,reverse "
+  printf "%s\n" "  $ ${0##*/} category=science,page=2,reverse "
 }
 if [ "$1" = -h ] || [ "$1" = --help ]; then
   helpmsg
   exit 0
 else
-  curl http://getnews.tech/"$1"
+  curl us.getnews.tech/"$1"
 fi
